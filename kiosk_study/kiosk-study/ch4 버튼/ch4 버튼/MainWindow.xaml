@@ -20,6 +20,7 @@
                         <Setter Property="CornerRadius" Value="10"></Setter>
                     </Style>
                 </Button.Resources>   
+                
             </Button>
             <TextBlock Text="텍스트블럭" x:Name="txtb"></TextBlock>
         </StackPanel>
