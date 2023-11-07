@@ -1,0 +1,30 @@
+spring:
+  profiles:
+    active: local
+##edit configurations 에서  active profiles : postgresql로 설정해주었음(이게 더 우선순위 높음)
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    hikari:
+      jdbc-url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY= -1,DB_CLOSE_ON_EXIT=FALSE
+      username: sa
+      password:
+      driver-class-name: org.h2.Driver
+
+---
+spring:
+  config:
+    activate:
+      on-profile: postgresql
+  datasource:
+      url: jdbc:postgresql://localhost:5432/postgres
+      username: postgres
+      password: e4net1234!
+      driver-class-name: org.postgresql.Driver
+  batch:
+    jdbc:
+      initialize-schema: always
+
